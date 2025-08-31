@@ -9,3 +9,8 @@ Python tutorials using Marimo notebooks.
 - To install Marimo and uv, use pip.
   - `pip install marimo`
   - `pip install uv`
+
+## Python tutorial projects
+
+- Budget tracker
+- Automated email sorting
