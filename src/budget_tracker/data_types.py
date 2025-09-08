@@ -215,21 +215,25 @@ def _():
     """
 
     list_of_entries = [
-
+        {"Type": "Income", 
+         "Date": "9/7/2025", 
+         "Label": "Kwento Analytics",
+         "Amount": 2520.20,
+         "Description": "Bi-weekly income from Kwento Analytics"}
     ]
 
     # Displays the contents of the list "list_of_entries"
     print(list_of_entries)
-    return (list_of_entries,)
+    return
 
 
 @app.cell
-def _(list_of_entries):
+def _():
     """
         1. Assign the second element in "list_of_entries" to a new variable called "second_entry".
         2. Print out the values associated with the following keys of the "second_entry" dictionary: "Date", "Label", "Amount" 
     """
-    second_entry = list_of_entries[0]
+    # Assign the second element in "list_of_entries" to "second_entry"
 
     print() # Print the date 
     print() # Print the label

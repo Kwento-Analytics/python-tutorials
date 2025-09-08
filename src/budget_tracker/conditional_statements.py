@@ -185,6 +185,31 @@ def _(mo):
 
 @app.cell(column=1)
 def _():
+    """
+        Check if "list_of_entries" is empty. If so, then print out a message saying that the list is empty.
+        If the list is NOT empty, then assign the first item in the list to a new variable called "first_entry".
+        Then, create an if...elif...else chain that does the following checks:
+            1. if the keys of first_entry include "Category", then print out a message that says that the "Category" key was found
+            2. else if the keys of first_entry include "Account", then print out the message that says that the "Account" key was found
+            3. else, then print out a message that says that neither the "Category" nor "Account" keys were found
+
+        Here's some pseudocode to help:
+
+        if list_of_entries is empty:
+            print message that says the list is empty
+        else:
+            assign the first element of list_of_entries to first_entry
+            if "Category" is in the keys of first_entry:
+                print message that says "Category" was found
+            elif "Account" is in the keys of first_entry:
+                print message that says "Account" was found
+            else:
+                print message that says neither keys were found
+
+        NOTE: To check if a list is empty, you can check the length of a list:
+        print(len(list_of_entries)) # This will show you the number of elements in that list. If it's zero, then it means the list is empty.
+    """
+
     return
 
 
