@@ -12,5 +12,4 @@ Python tutorials using Marimo notebooks.
 
 ## Python tutorial projects
 
-- Budget tracker
-- Automated email sorting
+- [Budget Tracker](/docs/budget_tracker.md)
