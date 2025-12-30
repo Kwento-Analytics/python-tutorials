@@ -1,6 +1,8 @@
 # /// script
 # requires-python = ">=3.13"
-# dependencies = []
+# dependencies = [
+#     "uvicorn==0.35.0",
+# ]
 # ///
 
 import marimo
@@ -19,7 +21,7 @@ def _():
 def _(mo):
     mo.md(
         r"""
-    # Python Basic Data Types and Variable Assignment
+    # ⚙️ Python Basic Data Types and Variable Assignment
 
     In Python, variables are used to store data. You don’t need to declare a variable type explicitly; Python infers the type based on the value you assign.
 
@@ -87,18 +89,38 @@ def _(mo):
     return
 
 
-@app.cell(hide_code=True)
+@app.cell
+def _():
+    """
+        Create a list of 6 elements: two integers, two strings, and two floats.
+    """
+
+    random_list = []
+    return
+
+
+@app.cell
+def _():
+    """
+        Create a dictionary that has 4 key-value pairs. The keys should all be string types while the values
+        should all be float types.
+    """
+
+    random_dictionary = {}
+    return
+
+
+@app.cell(column=1, hide_code=True)
 def _(mo):
     mo.md(
         r"""
-    # Accessing Elements in Lists and Dictionaries
+    # 📋 Lists
 
-    In Python, you often need to **retrieve values** from lists and dictionaries.  
-    Both use **indexes** or **keys**, but they work in slightly different ways.
+    In Python, you often need to **store and retrieve values** from lists. Lists use indexes to store and access elements in the list.
 
     ---
 
-    ## 📋 Accessing Elements in Lists
+    ## Accessing Elements in Lists
 
     Lists are **ordered collections**. Each element has an **index** (a number starting at `0`).
 
@@ -135,7 +157,48 @@ def _(mo):
     print(categories[2:])  # ["utilities", "subscriptions"] (from index 2 to the end)
     ```
 
-    ## 📖 Accessing Elements in Dictionaries
+    ## ✅ Summary
+    - Lists use **indexes (0, 1, 2, …)** to access elements.
+    - **Negative indexes** count from the end of a list.
+    - **Slicing** lets you grab ranges of list elements.
+    """
+    )
+    return
+
+
+@app.cell
+def _():
+    """
+        Using the list that you created in the previous section (random_list), 
+
+        1. Print out the 3rd element in the list.
+        2. Print out the 2nd element all the way to the last element.
+        3. Print out the last element.
+    """
+
+    # Print out the 3rd element in the list
+    print()
+
+    # Print out the 2nd all the way to the last element
+    print()
+
+    # Print out the last element
+    print()
+    return
+
+
+@app.cell(column=2, hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    # 📖 Dictionaries
+
+    In Python, you often need to **store and retrieve values** from dictionaries.  
+    Dictionaries use key-value pairs to store and retrieve values.
+
+    ---
+
+    ## Accessing Elements in Dictionaries
     Dictionaries are **unordered collections** of key-value pairs. You access elements by their keys, not positions.
 
     ### 1. Access by Key
@@ -186,9 +249,6 @@ def _(mo):
     ```
 
     ## ✅ Summary
-    - Lists use **indexes (0, 1, 2, …)** to access elements.
-    - **Negative indexes** count from the end of a list.
-    - **Slicing** lets you grab ranges of list elements.
     - **Dictionaries** use **keys** (strings, numbers, etc.) instead of indexes.
     - Use `.get()` to avoid errors when accessing dictionary keys.
     """
@@ -196,48 +256,56 @@ def _(mo):
     return
 
 
-@app.cell(column=1)
+@app.cell
 def _():
     """
-        Create a list of 4 entries for a budget tracker, using a dictionary, with the following items:
-        - "Type": "Expense" or "Income" (str)
-        - "Date": "MM/DD/YYYY" (str)
-        - "Label" (str)
-        - "Amount" (float)
-        - "Description" (str)
+        Using the dictionary you created in the first section (random_dictionary),
 
-        Here's an example entry:
-        {"Type": "Income", 
-         "Date": "9/7/2025", 
-         "Label": "Kwento Analytics",
-         "Amount": 2520.20,
-         "Description": "Bi-weekly income from Kwento Analytics"}
+        1. Print out the values associated with the following keys of the "second_entry" dictionary: "Date", "Label", "Amount" 
     """
 
-    list_of_entries = [
-        {"Type": "Income", 
-         "Date": "9/7/2025", 
-         "Label": "Kwento Analytics",
-         "Amount": 2520.20,
-         "Description": "Bi-weekly income from Kwento Analytics"}
-    ]
+    print() # Print the date 
+    print() # Print the label
+    print() # Print the amount
+    return
 
-    # Displays the contents of the list "list_of_entries"
-    print(list_of_entries)
+
+@app.cell(column=3, hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+    # 💪 CHALLENGE
+
+    It's time to combine what you've learned in this section! In order to create a budgeting app, you need to store the income and expenses of the user. We will use both lists and dictionaries to do this. 
+
+    ---
+
+    ## Create a list of 4 dictionaries for a budget tracker with the following items:
+
+    - "Type": "Expense" or "Income" (str)
+    - "Date": "MM/DD/YYYY" (str)
+    - "Label" (str)
+    - "Amount" (float)
+    - "Description" (str)
+
+    ### Here's an example dictionary:
+
+    `{"Type": "Income",`  
+    `"Date": "9/7/2025",`  
+    `"Label": "Kwento Analytics",`  
+    `"Amount": 2520.20,`  
+    `"Description": "Bi-weekly income from Kwento Analytics"}`
+    """
+    )
     return
 
 
 @app.cell
 def _():
-    """
-        1. Assign the second element in "list_of_entries" to a new variable called "second_entry".
-        2. Print out the values associated with the following keys of the "second_entry" dictionary: "Date", "Label", "Amount" 
-    """
-    # Assign the second element in "list_of_entries" to "second_entry"
+    list_of_dictionaries = []
 
-    print() # Print the date 
-    print() # Print the label
-    print() # Print the amount
+    # Displays the contents of the list "list_of_dictionaries"
+    print(list_of_dictionaries)
     return
 
 
